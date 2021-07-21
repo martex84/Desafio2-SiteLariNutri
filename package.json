@@ -1,0 +1,11 @@
+{
+  "name": "sitevendas",
+  "version": "1.0.0",
+  "description": "Desafio de um site(LaraNutri) para venda de raçoes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Martex 84",
+  "license": "ISC"
+}

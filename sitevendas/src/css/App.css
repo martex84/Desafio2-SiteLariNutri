@@ -1,0 +1,32 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root{
+  height: 100vh;
+  background-image: url("../assets/backgroundPet.png");
+  background-size: 200px;
+}
+
+#principalSection{
+  height: 100%;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#principalSection > h1{
+  font-size: 60px;
+  color: #F8F8FF;
+}
+
+#containerContruction{
+  width: 250px;
+  height: 250px;
+  margin-top: 20px;
+  border: 5px solid #F8F8FF;
+}
