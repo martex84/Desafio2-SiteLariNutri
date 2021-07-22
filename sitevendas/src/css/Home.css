@@ -1,0 +1,43 @@
+#secaoPrincipal {
+    padding: 50px;   
+}
+
+#secaoPrincipal > h1{
+    font-size: 2.2em;
+    text-align: center;
+}
+
+.containerConteudo{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.containerImagemNutricao {
+    width: 400px;
+    height: 390px;
+    border: 3px solid #84A98C;
+}
+
+.containerNutricao>p {
+    margin-top: 10px;
+    font-size: 1em;
+    text-align: center;
+    color: #FFFAF0;
+}
+
+.ContainerTextoNutricao {
+    width: 430px;
+}
+
+.ContainerTextoNutricao>p {
+    margin-top: 15px;
+    font-size: 1.5em;
+}
+
+.cotainerImagemTextoNutricao{    
+    width: 300px;
+    height: 210px;
+    margin: auto;
+}

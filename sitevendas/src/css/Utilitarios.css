@@ -1,5 +1,34 @@
+#secaoPrincipal{
+    width: 100%;
+    margin: 50px auto 20px auto; 
+    max-width: 1200px;
+    height: 650px;
+    background-color: rgba(82,121,111,0.3);
+}
+
 .imagemPadrao{
     width: 100%;
     height: 100%;
     text-align: center;
+}
+
+.rotacionarComponente{
+    transform: scaleX(-1);
+}
+
+.backgroundNav{
+    background-color: #84A98C;
+}
+
+.containerPadrao{
+    width: 100%;
+    height: 100%;
+}
+
+.corPadrao1{
+    color: #CAD2C5;
+}
+
+.corPadrao5{
+    color: #2F3E46;
 }
