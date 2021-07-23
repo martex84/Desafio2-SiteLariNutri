@@ -2,7 +2,7 @@ import '../../css/NavBarPrincipal.css';
 import '../../css/Global.css';
 import '../../css/fontAwesome/css/all.css'
 
-import { React, useState } from 'react';
+import { React} from 'react';
 import { Link } from 'react-router-dom';
 
 import setaDireita from '../../assets/seta.png'

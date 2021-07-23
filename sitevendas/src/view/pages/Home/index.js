@@ -1,7 +1,7 @@
 import '../../../css/Home.css'
 import '../../../css/Global.css'
 
-import { React, useState, useEffect } from 'react';
+import { React } from 'react';
 
 import NavBar from '../../component/NavBar';
 import Footer from '../../component/Footer';
@@ -21,7 +21,7 @@ function Html() {
                 <div className="containerConteudoHome">
                     <div className="containerNutricao">
                         <div className="containerImagemNutricao">
-                            <img src="https://cdn.pixabay.com/photo/2017/04/07/10/53/dog-2210717_960_720.jpg" className="imagemPadrao"></img>
+                            <img src="https://cdn.pixabay.com/photo/2017/04/07/10/53/dog-2210717_960_720.jpg" className="imagemPadrao" alt="Cachorro Comendo"></img>
                         </div>
                         {/* Container Com Imagem De Nutrição */}
                         <p>"Hmmm adoro minha ração sabor bacon!"</p>

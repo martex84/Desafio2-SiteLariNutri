@@ -21,7 +21,7 @@ function Cadastro() {
     const [telefone, setTelefone] = useState("");
 
 
-    const estados = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RR", "RO", "RJ", "RN", "RS", "SC", "SP", "SE", "TO"];
+    /* const estados = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RR", "RO", "RJ", "RN", "RS", "SC", "SP", "SE", "TO"]; */
 
     useEffect(() => { }, [])
 
@@ -41,7 +41,7 @@ function Cadastro() {
         ];
 
         arrayStorage.map(item => {
-            localStorage.setItem(item.tipo,item.valor); 
+            return localStorage.setItem(item.tipo,item.valor); 
         })
 
         
