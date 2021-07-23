@@ -1,4 +1,5 @@
 import '../../../css/Home.css'
+import '../../../css/Global.css'
 
 import { React, useState, useEffect } from 'react';
 
@@ -14,30 +15,34 @@ function Html() {
             <NavBar></NavBar>
             {/* Barra de Navegação Principal */}
             <section id="secaoPrincipal">
-                <h1 className="corPadrao1">
+                <h1 className="corPadrao1 corVermelha">
                     Na LaraNutri a alimentação do seu pet é prioridade.
                 </h1>
-                <div class="containerConteudo">
+                <div className="containerConteudoHome">
                     <div className="containerNutricao">
                         <div className="containerImagemNutricao">
                             <img src="https://cdn.pixabay.com/photo/2017/04/07/10/53/dog-2210717_960_720.jpg" className="imagemPadrao"></img>
                         </div>
                         {/* Container Com Imagem De Nutrição */}
-                        <p>"Uma alimentação adequada vai melhorar a saúde do seu pet"</p>
+                        <p>"Hmmm adoro minha ração sabor bacon!"</p>
                     </div>
                     {/* Conatiner Para Imagem De Nutrição */}
                     <div className="ContainerTextoNutricao corPadrao1">
                         <p>
-                            Venha fazer formulação especial para seu pet, ele vai adorar experimentar cada tipo de ração.
+                            Venha fazer formulação especial para seu pet, ele irá adorar experimentar os diversos tipo de ração.
                         </p>
                         <p>
                             Não se esqueça de nos informar seus dados e do seu pet, assim logo a ração Nutri chega na sua porta.
                         </p>
 
                         <div className="cotainerImagemTextoNutricao">
-                            <img src={dogBiscoito} alt="Vetor De Cachorro" className="imagemPadrao"></img>
+                            <div className="containerImagemPropaganda">
+                                <img src={dogBiscoito} alt="Vetor De Cachorro" className="imagemPadrao"></img>
+                            </div>
+                            {/* Container Imagem Detalhe */}
+                            <p>Venha melhorar o dia do seu pet.</p>
                         </div>
-                        {/* Container Imagem Detalhe */}
+                        {/* Container Detalhe Nutrição */}
                     </div>
                     {/* Container Texto Promocional */}
                 </div>

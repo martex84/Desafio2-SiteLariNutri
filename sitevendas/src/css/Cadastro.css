@@ -1,0 +1,85 @@
+.containerConteudoCadastro {
+    width: 800px;
+    max-width: 800px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.containerCadastro {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.containerCadastro>label {
+    margin-right: 10px;
+    font-size: 1.8em;
+}
+
+.containerCadastro>input,
+.containerCadastro>select {
+    height: 40px;
+    padding: 5px;
+    background-color: rgba(211, 211, 211, 0.3);
+    border: 2px solid #2F3E46;
+    font-size: 1.2em;
+}
+
+.containerCadastro>input:hover,
+.containerCadastro>select:hover{
+    color: #DC143C;
+    background-color: rgba(211, 211, 211, 0.9);
+}
+
+.containerSecundarioCadastro {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.inputCidadeCadastro {
+    width: 505px;
+    margin-right: 10px;
+}
+
+.labelCpfCadastro {
+    width: 60px;
+}
+
+.inputTelefoneCadastro {
+    width: 300px;
+    margin-right: 10px;
+}
+
+.inputCpfCadastro {
+    width: 310px;
+}
+
+.containerBotaoCadastro{
+    width: 400px;
+    height: 50px;
+    margin: 30px auto 0 auto;
+}
+
+.botaoEnviarCadastro {
+    border: 3px solid #2F3E46;
+    border-radius: 20px;
+    font-size: 1.3em;
+}
+
+.botaoEnviarCadastro:hover{
+    cursor: pointer;
+}
+
+.widthInputMax {
+    width: 690px;
+}
+
+.widthLabelPrimario {
+    width: 100px;
+}

@@ -2,7 +2,6 @@
     width: 100%;
     margin: 50px auto 20px auto; 
     max-width: 1200px;
-    height: 650px;
     background-color: rgba(82,121,111,0.3);
 }
 
@@ -16,10 +15,6 @@
     transform: scaleX(-1);
 }
 
-.backgroundNav{
-    background-color: #84A98C;
-}
-
 .containerPadrao{
     width: 100%;
     height: 100%;
@@ -29,6 +24,30 @@
     color: #CAD2C5;
 }
 
+.corPadrao3{
+    color: #52796F;
+}
+
 .corPadrao5{
     color: #2F3E46;
+}
+
+.corVermelha{
+    color: #DC143C;
+}
+
+.backgroundCor1{
+    background-color: #CAD2C5;
+}
+
+.backgroundCor2{
+    background-color: #84A98C;
+}
+
+.backgroundCor4{
+    background-color:  #354F52;
+}
+
+.linkLimpo{    
+    text-decoration: none;
 }

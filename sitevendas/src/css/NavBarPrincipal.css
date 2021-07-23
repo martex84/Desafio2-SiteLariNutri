@@ -17,22 +17,29 @@
 
 .containerNavInterno {
     width: 92%;
-    height: 100%;
+    height: 100%;    
 }
 
-.containerLogo {    
+.containerGeralLogo {   
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.linkRouter{
+    cursor: pointer;
     padding-left: 10px;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: center;    
 }
 
-.containerLogo > div{
+.containerLogo{
     width: 50px;
     margin-right: 10px;
 }
 
-.containerLogo > h2{
+.nomeLogo{
     font-size: 1.8em;
 }
 
@@ -58,24 +65,25 @@
 
 .botaoProduto{
     width: 100px;
+    height: 50px;
 }
 
 .botaoCadastro{
-    width: 80px;    
+    width: 80px;   
+    height: 50px; 
 }
 
 .botaoCarrinho{
-    width: 80px;    
-    font-size: 25px;
-    color: #DC143C;
+    width: 80px;
+    height: 50px;    
+    font-size: 25px;   
 }
 
-.padraoBotao{
-    height: 50px;
-    padding: 10px;
+.padraoBotao{    
+    
     border: 2px solid #CAD2C5;
     border-radius: 20px;
-    background-color: #CAD2C5;    
+    cursor: pointer;
 }
 
 .botaoCentro{

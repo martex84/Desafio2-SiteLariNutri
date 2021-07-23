@@ -1,8 +1,9 @@
 import '../../css/NavBarPrincipal.css';
-import '../../css/Utilitarios.css';
+import '../../css/Global.css';
 import '../../css/fontAwesome/css/all.css'
 
-import { React,useState } from 'react';
+import { React, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import setaDireita from '../../assets/seta.png'
 import setaEsquerda from '../../assets/seta2.png'
@@ -14,14 +15,16 @@ function NavBar() {
         <>
             <nav id="menuPrincipal">
                 <div className="containerNav setaEsquerda">
-                    <div className="containerLogo containerNavInterno backgroundNav containerPadrao">
-                        <div>
-                            <img src={logo} alt="Logo LaraNutri" className="imagemPadrao"></img>
-                        </div>
-                        {/* Container Imagem Logo */}
-                        <h2 className="corPadrao5">
-                            LaraNutri
-                        </h2>
+                    <div className="containerGeralLogo containerNavInterno backgroundCor2 containerPadrao">
+                        <Link to="/" className="linkRouter linkLimpo">
+                            <div className="containerLogo">
+                                <img src={logo} alt="Logo LaraNutri" className="imagemPadrao"></img>
+                            </div>
+                            {/* Container Imagem Logo */}
+                            <h2 className="nomeLogo corPadrao5">
+                                LaraNutri
+                            </h2>
+                        </Link>
                     </div>
                     {/* Container Do Logo */}
                     <div className="containerSeta">
@@ -35,12 +38,27 @@ function NavBar() {
                         <img src={setaEsquerda} alt="Seta Navegação Direita" className="imagemPadrao"></img>
                     </div>
                     {/* Container Imagem Seta */}
-                    <div className="containerMenu containerNavInterno backgroundNav containerPadrao">
-                        <button className="botaoProduto padraoBotao corPadraoBotao"> Produto </button>                        
-                        <button className="botaoCarrinho padraoBotao botaoCentro">
-                            <i className="fas fa-shopping-basket" alt="Carrinho De Compra"></i>
-                        </button>
-                        <button className="botaoCadastro padraoBotao corPadraoBotao"> Login </button>
+                    <div className="containerMenu containerNavInterno backgroundCor2 containerPadrao">
+                        <div className="botaoProduto">
+                            <Link className="containerPadrao" to="/">
+                                <button className="containerPadrao  padraoBotao  corPadraoBotao backgroundCor1"> Produto </button>
+                            </Link>
+                        </div>
+                        {/* Container Botão Produto */}
+                        <div className="botaoCadastro botaoCentro">
+                            <Link className="containerPadrao" to="/cadastro">
+                                <button className="containerPadrao padraoBotao corPadraoBotao backgroundCor1"> Cadastro </button>
+                            </Link>
+                        </div>
+                        {/* Container Botão Cadastro */}
+                        <div className="botaoCarrinho">
+                            <Link className="containerPadrao" to="/">
+                                <button className="containerPadrao padraoBotao corVermelha backgroundCor1">
+                                    <i className="fas fa-shopping-basket" alt="Carrinho De Compra"></i>
+                                </button>
+                            </Link>
+                        </div>
+                        {/* Container Botão Carrinho de Compra */}
                     </div>
                     {/* Container Menu  */}
                 </div>

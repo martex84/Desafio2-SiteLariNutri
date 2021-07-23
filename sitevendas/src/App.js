@@ -1,8 +1,8 @@
-import Home from './view/pages/Html';
+import Rota from './rotes';
 
 function App() {
   return (
-    <Home />
+    <Rota />
   );
 }
 

@@ -5,13 +5,14 @@
 #secaoPrincipal > h1{
     font-size: 2.2em;
     text-align: center;
+    font-weight: 900;
 }
 
-.containerConteudo{
-    margin-top: 20px;
+.containerConteudoHome{
+    margin-top: 50px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .containerImagemNutricao {
@@ -21,7 +22,7 @@
 }
 
 .containerNutricao>p {
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 1em;
     text-align: center;
     color: #FFFAF0;
@@ -36,8 +37,18 @@
     font-size: 1.5em;
 }
 
-.cotainerImagemTextoNutricao{    
+.cotainerImagemTextoNutricao{
+    width: 310px;
+    height: 220px;
+    margin: 50px auto 0px auto;
+}
+
+.cotainerImagemTextoNutricao > p{
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.containerImagemPropaganda{    
     width: 300px;
     height: 210px;
-    margin: auto;
 }

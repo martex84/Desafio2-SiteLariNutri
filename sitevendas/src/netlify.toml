@@ -1,0 +1,8 @@
+[[redirects]]
+from = "/*"
+to = "/view/pages/Home/index.html"
+
+[[redirects]]
+from = "/Cadastro"
+to = "/view/pages/Cadastro/index.html"
+
