@@ -3,15 +3,15 @@ import '../../../css/Global.css'
 
 
 import { React, useState, useEffect } from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import NavBar from '../../component/NavBar';
 import Footer from '../../component/Footer';
-
-
-
+import numerosAleatorios from '../../../methods/numerosAleatorios';
+import salvarValorStorage from '../../../methods/salvarValorStorage';
 
 function Cadastro() {
+   
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("");
     const [cidade, setCidade] = useState("");
@@ -19,32 +19,34 @@ function Cadastro() {
     const [estado, setEstado] = useState("");
     const [cpf, setCpf] = useState("");
     const [telefone, setTelefone] = useState("");
-
+    const [link, setLink] = useState("");
 
     /* const estados = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RR", "RO", "RJ", "RN", "RS", "SC", "SP", "SE", "TO"]; */
+ 
+    function salvarStorageInterno(e) {
 
-    useEffect(() => { }, [])
+        if (localStorage.getItem("id") === null) {
+            const id = numerosAleatorios(1000, 0);            
 
-    function salvarStorageInterno() {
-        /*  const arrayStorage = {
-             nome: nome,
-             email: email,
-             cidade: cidade,
-             endereco: endereco,
-             estado: estado,
-             cpf: cpf,
-             telefone: telefone
-         } */
+            const arrayStorage = [{
+                id: id,
+                nome: nome,
+                email: email,
+                cidade: cidade,
+                endereco: endereco,
+                estado: estado,
+                cpf: cpf,
+                telefone: telefone,
+            }]
 
-        const arrayStorage = [
-            { tipo: "nome-Cliente", valor: nome }, { tipo: "email-Cliente", valor: email }, { tipo: "cidade-Cliente", valor: cidade }, { tipo: "endereco-Cliente", valor: endereco }, { tipo: "estado-Cliente", valor: estado },{ tipo: "cpf-Cliente", valor: cpf },{ tipo: "telefone-Cliente", valor: telefone }            
-        ];
+            salvarValorStorage("Cliente",arrayStorage,e);
 
-        arrayStorage.map(item => {
-            return localStorage.setItem(item.tipo,item.valor); 
-        })
+        }
 
-        
+        else{
+            return alert("Você já está cadastrado, saia do seu perfil");
+        }
+
     }
 
     return (
@@ -52,59 +54,63 @@ function Cadastro() {
             <NavBar></NavBar>
             {/* NavBar Principal */}
             <section id="secaoPrincipal">
-                <h1 className="corVermelha">Preenchas Seus Dados Para Realizar a Compra</h1>
+                <h1 className="corVermelha">Cadastro de Usuário</h1>
+                <div className="containnerTextoCadastro containerTextoInformacao corPadrao1">
+                    <p>
+                        Para que o produto possa ser enviado é necessário realizar o cadastro, informando todas os dados a seguir, assim iremos enviar os produtos o mais breve possível ao confirmar sua compra.
+                    </p>
+                </div>
+                {/* Container Texto Informação */}
                 <div className="containerConteudoCadastro">
                     <div className="containerCadastro">
                         <label className="labelInformacaoCadastro corPadrao1 widthLabelPrimario" >Nome:</label>
-                        <input type="text" className="inputNomeCadastro corPadrao1 widthInputMax" onChange={e => setNome(e.target.value)} value={nome}></input>
+                        <input type="text" className="inputNomeCadastro corPadrao1 widthInputMax inputPadrao" onChange={e => setNome(e.target.value)} value={nome}></input>
                     </div>
                     {/* Cadastro Do Nome */}
                     <div className="containerCadastro">
                         <label className="labelInformacaoCadastro corPadrao1 widthLabelPrimario" >Email:</label>
-                        <input type="text" className="inputEmailCadastro corPadrao1 widthInputMax" onChange={e => setEmail(e.target.value)} value={email}></input>
+                        <input type="text" className="inputEmailCadastro corPadrao1 widthInputMax inputPadrao" onChange={e => setEmail(e.target.value)} value={email}></input>
                     </div>
                     {/* Cadastro Do Email */}
                     <div className="containerSecundarioCadastro">
                         <div className="containerCadastro">
                             <label className="labelInformacaoCadastro corPadrao1 widthLabelPrimario">Cidade:</label>
-                            <input type="text" className="inputCidadeCadastro corPadrao1" onChange={e => setCidade(e.target.value)} value={cidade}></input>
+                            <input type="text" className="inputCidadeCadastro corPadrao1 inputPadrao" onChange={e => setCidade(e.target.value)} value={cidade}></input>
                         </div>
                         {/* Cadastro Da Cidade */}
                         <div className="containerCadastro">
                             <label className="labelInformacaoCadastro corPadrao1 widthLabelPrimario">Estado:</label>
-                            <select className="inputEstadoCadastro" onChange={e => setEstado(e.target.value)} value={estado}>
+                            <select className="inputEstadoCadastro selectPadrao" onChange={e => setEstado(e.target.value)} value={estado}>
                                 <option>  </option>
                                 <option>SP</option>
                                 <option>MG</option>
                                 <option>RG</option>
                             </select>
-
-
                         </div>
                         {/* Cadastro Da Cidade */}
                     </div>
                     <div className="containerCadastro">
                         <label className="labelInformacaoCadastro corPadrao1 widthLabelPrimario">Endereço:</label>
-                        <input type="text" className="inputEnderecoCadastro corPadrao1 widthInputMax" onChange={e => setEndereco(e.target.value)} value={endereco} placeholder="Bairro - Rua - Numero"></input>
+                        <input type="text" className="inputEnderecoCadastro corPadrao1 widthInputMax inputPadrao" onChange={e => setEndereco(e.target.value)} value={endereco} placeholder="Bairro - Rua - Numero"></input>
                     </div>
                     {/* Cadastro Da Endereco */}
                     <div className="containerSecundarioCadastro">
                         <div className="containerCadastro">
                             <label className="labelInformacaoCadastro corPadrao1 widthLabelPrimario">Numéro:</label>
-                            <input type="text" className="inputTelefoneCadastro corPadrao1" onChange={e => setTelefone(e.target.value)} value={telefone}></input>
+                            <input type="text" className="inputTelefoneCadastro corPadrao1 inputPadrao" onChange={e => setTelefone(e.target.value)} value={telefone}></input>
                         </div>
                         {/* Cadastro Do Telefone */}
                         <div className="containerCadastro">
                             <label className="labelCpfCadastro labelInformacaoCadastro corPadrao1">Cpf:</label>
-                            <input type="text" className="inputCpfCadastro corPadrao1" onChange={e => setCpf(e.target.value)} value={cpf}></input>
+                            <input type="text" className="inputCpfCadastro corPadrao1 inputPadrao" onChange={e => setCpf(e.target.value)} value={cpf}></input>
                         </div>
                         {/* Cadastro Do Cpf */}
                     </div>
                 </div>
                 {/* Container Para Armazenar Conteudo */}
                 <div className="containerBotaoCadastro">
-                    <Link className="linkLimpo" to="/">
-                    <button className="botaoEnviarCadastro containerPadrao backgroundCor4 corPadrao1" onClick={salvarStorageInterno}>Enviar Cadastro</button>
+                    <Link className="linkLimpo" to={link}>
+                        <button className="botaoEnviarCadastro containerPadrao backgroundCor4 corPadrao1" onClick={e => salvarStorageInterno(e)}>Enviar Cadastro</button>
                     </Link>
                 </div>
                 {/* Container para Botao Cadastro */}

@@ -6,12 +6,15 @@
   box-sizing: border-box;
 }
 
+html{
+  background-image: url("../assets/backgroundPet.png");
+}
+
 #root{
   height: 100vh;
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
-  background-image: url("../assets/backgroundPet.png");
+  flex-direction: column;  
   background-size: 200px;
   font-family: 'Cormorant Garamond', serif;
 }

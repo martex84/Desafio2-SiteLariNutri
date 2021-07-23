@@ -5,19 +5,36 @@
     background-color: rgba(82,121,111,0.3);
 }
 
+.containerTextoInformacao > p{    
+    text-align: justify;
+    font-size: 1.6em;
+}
+
+.containerPadrao{
+    width: 100%;
+    height: 100%;
+}
+
 .imagemPadrao{
     width: 100%;
     height: 100%;
     text-align: center;
 }
 
-.rotacionarComponente{
-    transform: scaleX(-1);
+.inputPadrao,
+.selectPadrao{
+    height: 40px;
+    padding: 5px;
+    margin-left: 10px;
+    background-color: rgba(211, 211, 211, 0.3);
+    border: 2px solid #2F3E46;
+    font-size: 1.2em;
 }
 
-.containerPadrao{
-    width: 100%;
-    height: 100%;
+.inputPadrao:hover,
+.selectPadrao:hover{
+    color: #DC143C;
+    background-color: rgba(211, 211, 211, 0.9);
 }
 
 .corPadrao1{

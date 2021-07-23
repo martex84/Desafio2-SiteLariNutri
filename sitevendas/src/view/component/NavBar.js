@@ -11,6 +11,13 @@ import logo from '../../assets/logo.png'
 
 function NavBar() {
 
+    function apagarLocalStorage(){
+        if(localStorage.length > 0){
+            localStorage.clear();
+            alert("Até Logo!")
+        }
+    }
+
     return (
         <>
             <nav id="menuPrincipal">
@@ -39,21 +46,27 @@ function NavBar() {
                     </div>
                     {/* Container Imagem Seta */}
                     <div className="containerMenu containerNavInterno backgroundCor2 containerPadrao">
-                        <div className="botaoProduto">
-                            <Link className="containerPadrao" to="/">
+                        <div className="botaoProduto marginPadraoBotao">
+                            <Link className="containerPadrao" to="/produtos">
                                 <button className="containerPadrao  padraoBotao  corPadraoBotao backgroundCor1"> Produto </button>
                             </Link>
                         </div>
                         {/* Container Botão Produto */}
-                        <div className="botaoCadastro botaoCentro">
+                        <div className="botaoCadastro marginPadraoBotao">
                             <Link className="containerPadrao" to="/cadastro">
                                 <button className="containerPadrao padraoBotao corPadraoBotao backgroundCor1"> Cadastro </button>
                             </Link>
                         </div>
                         {/* Container Botão Cadastro */}
+                        <div className="botaoLogOff marginPadraoBotao">
+                            <Link className="containerPadrao" to="/">
+                                <button className="containerPadrao padraoBotao corPadraoBotao backgroundCor1" onClick={e => apagarLocalStorage()}> Log off </button>
+                            </Link>
+                        </div>
+                        {/* Container Botão Cadastro */}
                         <div className="botaoCarrinho">
                             <Link className="containerPadrao" to="/">
-                                <button className="containerPadrao padraoBotao corVermelha backgroundCor1">
+                                <button className="containerPadrao padraoBotao corVermelha backgroundCor1 botaoLateral">
                                     <i className="fas fa-shopping-basket" alt="Carrinho De Compra"></i>
                                 </button>
                             </Link>
