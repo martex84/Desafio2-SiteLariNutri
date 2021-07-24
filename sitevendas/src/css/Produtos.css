@@ -1,8 +1,8 @@
-.containerTextoProdutos{    
+.containerTextoProdutos {
     margin-top: 20px;
 }
 
-.containerConteudoProduto{
+.containerConteudoProduto {
     width: 900px;
     max-width: 900px;
     margin: 30px auto;
@@ -12,7 +12,7 @@
     flex-direction: column;
 }
 
-.containerProduto{    
+.containerProduto {
     width: 100%;
     margin-top: 20px;
     display: flex;
@@ -20,74 +20,84 @@
     justify-content: flex-start;
 }
 
-.containerProdutoFim{
+.containerProdutoFim {
     justify-content: flex-end;
 }
 
-.containerPadraoTopo{
+.containerPadraoTopo {
     margin-top: 0;
 }
 
-.containerSecundarioProduto{
+.containerSecundarioProduto {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.labelInformacaoProduto{   
-    width: 110px;    
+.labelInformacaoProduto {
+    width: 110px;
     font-size: 1.8em;
 }
 
-.inputNomeProduto{
+.inputNomeProduto {
     width: 630px;
     margin-right: 10px;
 }
 
-.labelIdadeProduto{
+.labelIdadeProduto {
     width: 70px;
 }
 
-.inputIdadeProduto{
+.inputIdadeProduto {
     width: 50px
 }
 
-.selectTamanhoProduto{
+.selectTamanhoProduto {
     width: 150px;
     margin-right: 10px;
 }
 
-.labelRaçaProduto{
+.labelRaçaProduto {
     width: 70px;
 }
 
-.inputRacaProduto{
+.inputRacaProduto {
     width: 540px;
 }
 
-.selectExtrasProduto{
+.selectExtrasProduto {
     width: 250px;
     margin-right: 10px;
 }
 
-.labelQuantidadeProduto{
+.labelQuantidadeProduto {
     width: 130px;
 }
 
-.inputQuantidadeProduto{
+.inputQuantidadeProduto {
     width: 350px;
 }
 
+.containerCorpoProdutos {
+    margin: 40px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
 
-
-.containerBotaoProduto{
+.containerBotaoProduto {
     width: 500px;
     height: 60px;
     margin: 30px auto 0 auto;
+
 }
 
-.botaoEnviarProduto{
+
+
+.botaoEnviarProduto {
     cursor: pointer;
     border: 3px solid #DC143C;
     border-radius: 20px;

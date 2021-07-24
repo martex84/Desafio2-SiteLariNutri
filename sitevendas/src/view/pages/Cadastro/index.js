@@ -8,10 +8,10 @@ import { Link } from 'react-router-dom'
 import NavBar from '../../component/NavBar';
 import Footer from '../../component/Footer';
 import numerosAleatorios from '../../../methods/numerosAleatorios';
-import salvarValorStorage from '../../../methods/salvarValorStorage';
+import manipulacaoLocalStorage from '../../../methods/manipulacaoLocalStorage';
 
 function Cadastro() {
-   
+
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("");
     const [cidade, setCidade] = useState("");
@@ -21,12 +21,13 @@ function Cadastro() {
     const [telefone, setTelefone] = useState("");
     const [link, setLink] = useState("");
 
+
     /* const estados = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RR", "RO", "RJ", "RN", "RS", "SC", "SP", "SE", "TO"]; */
- 
+
     function salvarStorageInterno(e) {
 
         if (localStorage.getItem("id") === null) {
-            const id = numerosAleatorios(1000, 0);            
+            const id = numerosAleatorios(1000, 0);
 
             const arrayStorage = [{
                 id: id,
@@ -38,12 +39,11 @@ function Cadastro() {
                 cpf: cpf,
                 telefone: telefone,
             }]
-
-            salvarValorStorage("Cliente",arrayStorage,e);
-
+            const valorLocalStorage = new manipulacaoLocalStorage(arrayStorage);
+            valorLocalStorage.salvarStorageInterno("Cliente", e);
         }
 
-        else{
+        else {
             return alert("Você já está cadastrado, saia do seu perfil");
         }
 

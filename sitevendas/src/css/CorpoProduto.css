@@ -1,0 +1,51 @@
+.containerPrincipalProduto{
+    width: 250px;
+    background-color: rgba(211,211,211,0.6);
+    border: 1px solid;
+}
+
+.containerPrincipalProduto>h2{
+    font-weight: 900;
+}
+
+.containerDescricaoVenda{
+    width: 100%;
+    height: 70px;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2em;    
+}
+
+.ContainerImagemProduto{
+    padding: 10px;
+    text-align: center;
+    background-color: #FFFAF0; 
+}
+
+.imagemProduto{
+    width: 90%;
+}
+
+.containerPreçoProduto{
+    height: 50px;
+    padding: 10px;
+    font-size: 1.9em;
+    text-align: center;
+}
+
+.bordaPadraoCorpoProduto{   
+    border-color: #CAD2C5;
+    border-collapse: collapse;    
+}
+
+.ContainerBotao{
+    width: 100%;
+    height: 50px;
+}
+
+.botaoProdutoVenda{
+    cursor: pointer;
+    font-size: 1.5em;
+    border: 2px solid #CAD2C5;
+}
