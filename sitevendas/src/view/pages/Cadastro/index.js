@@ -2,13 +2,13 @@ import '../../../css/Cadastro.css'
 import '../../../css/Global.css'
 
 
-import { React, useState, useEffect } from 'react';
+import { React, useState} from 'react';
 import { Link } from 'react-router-dom'
 
 import NavBar from '../../component/NavBar';
 import Footer from '../../component/Footer';
-import numerosAleatorios from '../../../methods/numerosAleatorios';
-import manipulacaoLocalStorage from '../../../methods/manipulacaoLocalStorage';
+import numerosAleatorios from '../../../services/numerosAleatorios';
+import manipulacaoLocalStorage from '../../../services/manipulacaoLocalStorage';
 
 function Cadastro() {
 
@@ -18,9 +18,7 @@ function Cadastro() {
     const [endereco, setEndereco] = useState("");
     const [estado, setEstado] = useState("");
     const [cpf, setCpf] = useState("");
-    const [telefone, setTelefone] = useState("");
-    const [link, setLink] = useState("");
-
+    const [telefone, setTelefone] = useState(""); 
 
     /* const estados = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RR", "RO", "RJ", "RN", "RS", "SC", "SP", "SE", "TO"]; */
 
@@ -109,7 +107,7 @@ function Cadastro() {
                 </div>
                 {/* Container Para Armazenar Conteudo */}
                 <div className="containerBotaoCadastro">
-                    <Link className="linkLimpo" to={link}>
+                    <Link className="linkLimpo" to="/">
                         <button className="botaoEnviarCadastro containerPadrao backgroundCor4 corPadrao1" onClick={e => salvarStorageInterno(e)}>Enviar Cadastro</button>
                     </Link>
                 </div>

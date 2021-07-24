@@ -8,8 +8,8 @@ import NavBar from "../../component/NavBar";
 import Footer from "../../component/Footer";
 import CorpoProduto from '../../component/CorpoProduto'
 
-import numeroAleatorio from '../../../methods/numerosAleatorios';
-import manipulacaoLocalStorage from '../../../methods/manipulacaoLocalStorage';
+import numeroAleatorio from '../../../services/numerosAleatorios';
+import manipulacaoLocalStorage from '../../../services/manipulacaoLocalStorage';
 
 export default function Produtos() {
 
@@ -18,50 +18,26 @@ export default function Produtos() {
     const [nome, setNome] = useState("");
     const [idade, setIdade] = useState("");
     const [tamanho, setTamanho] = useState("");
-    const [raca, setRaca] = useState("");
+    const [racaEspecie, setRacaEspecie] = useState("");
     const [extra, setExtra] = useState("");
-    const [quantidade, setQuantidade] = useState("");    
+    const [quantidade, setQuantidade] = useState("");
 
-    useEffect(() => {
-
-        if (storageLocalVazia() === false) {
-            const client = converteValorClient();
-            setIdClient(client.id);
-        }        
-
-        if (id === "") { setId(numeroAleatorio(1000, 0)) }
-    }, [id])
-
-    function storageLocalVazia() {        
-        return getStorageLocal() === null ? true : false
-    }
-
-    function getStorageLocal() {
-        return localStorage.getItem("Cliente")
-    }
-
-    function converteValorClient(){        
-        if(storageLocalVazia() === false){
-            return JSON.parse(getStorageLocal())[0];
-        }
-        return null;
-    }
-
-    function enviaValores(e) {        
-        if (storageLocalVazia() === false) {
-            if (converteValorClient().id === idClient) { //Verifica se o valor do Local Storage é o mesmo do gravado no sistema
+    function enviaValores(e) {
+        const verificaIdClient = new manipulacaoLocalStorage(null);        
+        if (verificaIdClient.verificaStorageLocalVazia("Cliente") === false) {
+           
+            if (verificaIdClient.converteValorClient().id === idClient) { //Verifica se o valor do Local Storage é o mesmo do gravado no sistema
                 const arrayStorage = [{
                     id: id,
                     idClient: idClient,
                     nome: nome,
                     idade: idade,
                     tamanho: tamanho,
-                    raca: raca,
-                    extra: extra,
-                    quantidade: quantidade,
+                    racaEspecie: racaEspecie,
+                    extra: extra,                    
                 }];
                 const valorLocalStorage = new manipulacaoLocalStorage(arrayStorage);
-                valorLocalStorage.salvarStorageInterno("Pet",e);
+                valorLocalStorage.salvarStorageInterno("Pet", e);
             }
             else alert("Valores de usuário alterados.")
         }
@@ -73,10 +49,25 @@ export default function Produtos() {
         setNome("");
         setIdade("");
         setTamanho("");
-        setRaca("");
+        setRacaEspecie("");
         setExtra("");
         setQuantidade("");
     }
+
+    useEffect(() => {
+
+        const verificaIdClient = new manipulacaoLocalStorage(null);
+
+        if (verificaIdClient.verificaStorageLocalVazia("Cliente") === false) {
+            const client = verificaIdClient.converteValorClient();            
+            setIdClient(client.id);
+        }
+
+        if (id === "") { setId(numeroAleatorio(1000, 0)) }  
+
+    }, [id,idClient])  
+    
+   /*  console.log(idClient); */
 
     return (
         <>
@@ -99,7 +90,7 @@ export default function Produtos() {
                         {/* Cadastro Do Nome */}
                         <div className="containerProduto containerProdutoFim">
                             <label className="labelIdadeProduto labelInformacaoProduto corPadrao1" >Idade:</label>
-                            <input type="text" className="inputIdadeProduto corPadrao1 inputPadrao" onChange={e => setIdade(e.target.value)}></input>
+                            <input type="number" className="inputIdadeProduto corPadrao1 inputPadrao" onChange={e => setIdade(e.target.value)} min="1" max="100"></input>
                         </div>
                         {/* Cadastro Da Idade */}
                     </div>
@@ -117,10 +108,10 @@ export default function Produtos() {
                         </div>
                         {/* Cadastro Do Tamanho */}
                         <div className="containerProduto containerProdutoFim">
-                            <label className="labelRaçaProduto labelInformacaoProduto corPadrao1 widthLabelPrimario" >Raça:</label>
-                            <input type="text" className="inputRacaProduto corPadrao1 widthInputMax inputPadrao" onChange={e => setRaca(e.target.value)}></input>
+                            <label className="labelRaçaProduto labelInformacaoProduto corPadrao1 widthLabelPrimario" >Raça e Espécie:</label>
+                            <input type="text" className="inputRacaProduto corPadrao1 widthInputMax inputPadrao" onChange={e => setRacaEspecie(e.target.value)} placeholder="Raça / Espécie"></input>
                         </div>
-                        {/* Cadastro Do Raça */}
+                        {/* Cadastro Do Raça Espécie */}
                     </div>
                     <div className="containerSecundarioProduto">
                         <div className="containerProduto">
@@ -135,29 +126,32 @@ export default function Produtos() {
                         </div>
                         {/* Cadastro Do Extras */}
                         <div className="containerProduto containerProdutoFim">
-                            <label className="labelQuantidadeProduto labelInformacaoProduto corPadrao1 widthLabelPrimario" >Quantidade:</label>
-                            <input type="text" className="inputQuantidadeProduto corPadrao1 widthInputMax inputPadrao" onChange={e => setQuantidade(e.target.value)}></input>
+                            <label className="labelQuantidadeProduto labelInformacaoProduto corPadrao1 widthLabelPrimario" >Quantidade(Kg):</label>
+                            <input type="number" className="inputQuantidadeProduto corPadrao1 widthInputMax inputPadrao" onChange={e => setQuantidade(e.target.value)} min="1" max="20"></input>
                         </div>
                         {/* Cadastro Do Quantidade */}
                     </div>
                 </div>
                 {/* Container Para Armazenar Conteudo */}
-                <div className="containerBotaoProduto">
-                    <Link className="linkLimpo" to="/produtos">
-                        <button className="botaoEnviarProduto containerPadrao backgroundCor4 corPadrao1" onClick={e => { enviaValores(e) }}>Enviar Para O Carrinho</button>
-                    </Link>
-                </div>
-                {/* Container para Botao Salvar Venda */}
                 <div className="containerCorpoProdutos">
-                    <CorpoProduto idProduto="1"></CorpoProduto>
-                    <CorpoProduto idProduto="1"></CorpoProduto>
-                    <CorpoProduto idProduto="1"></CorpoProduto>
+                    <CorpoProduto idProduto="0" idPet={id} quantidade={quantidade}></CorpoProduto>
+                    <CorpoProduto idProduto="1" idPet={id} quantidade={quantidade}></CorpoProduto>
+                    <CorpoProduto idProduto="2" idPet={id} quantidade={quantidade}></CorpoProduto>
                 </div>
                 {/* Container Para Produtos */}
-                <div className="containerBotaoProduto">
-                    <button className="botaoEnviarProduto containerPadrao backgroundCor4 corPadrao1" onClick={e => { limparCampos()}}>Limpar Campos</button>
+                <div className="containerBotoesProduto">
+                    <div className="containerBotaoProduto">
+                        <Link className="linkLimpo" to="/produtos">
+                            <button className="padraoBotaoProduto containerPadrao backgroundCor4 corPadrao1 corBordaBotaoEnviar" onClick={e => { enviaValores(e) }}>Enviar Para O Carrinho</button>
+                        </Link>
+                    </div>
+                    {/* Container para Botao Salvar Venda */}
+                    <div className="containerBotaoProduto">
+                        <button className="padraoBotaoProduto containerPadrao backgroundCor4 corPadrao1" onClick={e => { limparCampos() }}>Limpar Campos</button>
+                    </div>
+                    {/* Container para Botao Limpar Venda */}
                 </div>
-                {/* Container para Botao Limpar Venda */}
+                {/* Container Principal Botoes */}
             </section>
             {/* Seção Principal do Login */}
             <Footer></Footer>

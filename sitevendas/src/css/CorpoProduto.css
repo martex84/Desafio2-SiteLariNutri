@@ -1,5 +1,5 @@
 .containerPrincipalProduto{
-    width: 250px;
+    width: 300px;
     background-color: rgba(211,211,211,0.6);
     border: 1px solid;
 }
@@ -14,7 +14,7 @@
     margin-bottom: 20px;
     padding: 10px;
     text-align: center;
-    font-size: 1.2em;    
+    font-size: 1.1em;    
 }
 
 .ContainerImagemProduto{
@@ -23,8 +23,9 @@
     background-color: #FFFAF0; 
 }
 
-.imagemProduto{
-    width: 90%;
+.imagemProduto{    
+    max-width: 250px;
+    max-height: 240px;
 }
 
 .containerPreçoProduto{

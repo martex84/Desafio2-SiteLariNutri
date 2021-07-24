@@ -41,7 +41,7 @@
 }
 
 .inputNomeProduto {
-    width: 630px;
+    width: 610px;
     margin-right: 10px;
 }
 
@@ -50,7 +50,7 @@
 }
 
 .inputIdadeProduto {
-    width: 50px
+    width: 70px
 }
 
 .selectTamanhoProduto {
@@ -59,24 +59,24 @@
 }
 
 .labelRaçaProduto {
-    width: 70px;
+    width: 170px;
 }
 
 .inputRacaProduto {
-    width: 540px;
+    width: 440px;
 }
 
 .selectExtrasProduto {
-    width: 250px;
+    width: 450px;
     margin-right: 10px;
 }
 
 .labelQuantidadeProduto {
-    width: 130px;
+    width: 190px;
 }
 
 .inputQuantidadeProduto {
-    width: 350px;
+    width: 120px;
 }
 
 .containerCorpoProdutos {
@@ -89,17 +89,27 @@
 }
 
 .containerBotaoProduto {
-    width: 500px;
+    width: 400px;
     height: 60px;
     margin: 30px auto 0 auto;
 
 }
 
+.containerBotoesProduto{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 
 
-.botaoEnviarProduto {
+.padraoBotaoProduto {
     cursor: pointer;
-    border: 3px solid #DC143C;
+    border: 3px solid;
     border-radius: 20px;
     font-size: 1.3em;
+}
+
+.corBordaBotaoEnviar{
+    border-color: #DC143C;
 }
