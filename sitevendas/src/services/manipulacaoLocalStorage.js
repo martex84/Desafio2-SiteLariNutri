@@ -7,23 +7,27 @@ export default class manipulacaoLocalStorage {
         const arrayLocal = this.array[0];
         if (verificarArray(arrayLocal, evento) === true) {
             let nomeKey = "SemNome";
+            let mensagem = "Sem Mensagem"
             switch (tipoArray) {
                 case "Pet":
                     nomeKey = `${tipoArray}-${arrayLocal.id}`;
+                    mensagem = "Pedido Realizado Com Sucesso!"
                     break;
                     
                 case "Produto":
                     nomeKey = `${tipoArray}-${arrayLocal.idPet}`;
+                    mensagem = "Ração Escolhida com Sucesso"
                     break;
 
                 case "Cliente":
                 default:
                     nomeKey = `${tipoArray}`;
+                    mensagem = "Cliente Cadastrasdo com Sucesso"
                     break;
             }
 
             localStorage.setItem(nomeKey, JSON.stringify(this.array));
-            alert("Valores Salvos")
+            alert(mensagem)
         }
     }
 
@@ -48,7 +52,9 @@ export default class manipulacaoLocalStorage {
             arrayAntiga.map(itemArray => arrayNova.push(itemArray))
             arrayNova.push(arrayLocal);
             localStorage.removeItem(nomeVariavel);            
-            localStorage.setItem(nomeVariavel, JSON.stringify(arrayNova));               
+            localStorage.setItem(nomeVariavel, JSON.stringify(arrayNova));
+            
+            if(nome === "Produto") alert("Acrescentada Mais Uma Ração!")
         } 
     }
 }

@@ -27,17 +27,25 @@ export default function Produtos() {
         if (verificaIdClient.verificaStorageLocalVazia("Cliente") === false) {
            
             if (verificaIdClient.converteValorClient().id === idClient) { //Verifica se o valor do Local Storage é o mesmo do gravado no sistema
-                const arrayStorage = [{
-                    id: id,
-                    idClient: idClient,
-                    nome: nome,
-                    idade: idade,
-                    tamanho: tamanho,
-                    racaEspecie: racaEspecie,
-                    extra: extra,                    
-                }];
-                const valorLocalStorage = new manipulacaoLocalStorage(arrayStorage);
-                valorLocalStorage.salvarStorageInterno("Pet", e);
+                if(verificaIdClient.verificaStorageLocalVazia(`Produto-${id}`) === false){//Verifica se o cliente escolhe a ração no sistema
+                    const arrayStorage = [{
+                        id: id,
+                        idClient: idClient,
+                        nome: nome,
+                        idade: idade,
+                        tamanho: tamanho,
+                        racaEspecie: racaEspecie,
+                        extra: extra,                    
+                    }];
+                    const valorLocalStorage = new manipulacaoLocalStorage(arrayStorage);
+                    valorLocalStorage.salvarStorageInterno("Pet", e);
+
+                    setId("");
+                }
+                else{
+                    alert("Favor, escolher um tipo de ração para prosseguir!")
+                }
+                /*  */
             }
             else alert("Valores de usuário alterados.")
         }
