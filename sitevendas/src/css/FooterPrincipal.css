@@ -1,3 +1,16 @@
 #footerPrincipal {
     text-align: center;    
 }
+
+#footerPrincipal > p{
+    margin: 5px;
+    font-size: 1.1em;
+}
+
+.destaqueFooter{
+    font-size: 1.2em;
+}
+
+.destaqueFooter > a{
+    text-decoration: none;
+}

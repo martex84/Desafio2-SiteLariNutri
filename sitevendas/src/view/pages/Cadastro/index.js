@@ -92,7 +92,7 @@ function Cadastro() {
                     {/* Cadastro Da Endereco */}
                     <div className="containerSecundarioCadastro">
                         <div className="containerCadastro">
-                            <label className="labelInformacaoCadastro corPadrao1 widthLabelPrimario">Numéro:</label>
+                            <label className="labelInformacaoCadastro corPadrao1 widthLabelPrimario">Telefone:</label>
                             <input type="text" className="inputTelefoneCadastro corPadrao1 inputPadrao" onChange={e => setTelefone(e.target.value)} value={telefone}></input>
                         </div>
                         {/* Cadastro Do Telefone */}
