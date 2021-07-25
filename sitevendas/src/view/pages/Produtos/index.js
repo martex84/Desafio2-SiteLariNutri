@@ -83,7 +83,7 @@ export default function Produtos() {
             {/* NavBar Principal */}
             <section id="secaoPrincipal">
                 <h1 className="tituloPadrao corPadrao1 contornoVermelho">Formulação</h1>
-                <div className="containerTextoProdutos containerTextoInformacao">
+                <div className="containerTextoProdutos containerTextoInformacao corPadrao1">
                     <p>
                         Para realizar a formulação é necessário informar os dados do seu pet, assim iremos escolher os melhores ingredientes com base no que foi informado, caso tenha mais de um pet, envie o pedido para o carrinho e repita o processo.
                     </p>
@@ -93,19 +93,19 @@ export default function Produtos() {
                     <div className="containerSecundarioProduto containerPadraoTopo">
                         <div className="containerProduto">
                             <label className="labelInformacaoProduto corPadrao1" >Nome:</label>
-                            <input type="text" className="inputNomeProduto corPadrao1 widthInputMax inputPadrao inputGeralProduto" onChange={e => setNome(e.target.value)}></input>
+                            <input type="text" className="inputNomeProduto corPadrao1 widthInputMax inputPadrao inputGeralProduto" onChange={e => setNome(e.target.value)} value={nome}></input>
                         </div>
                         {/* Cadastro Do Nome */}
                         <div className="containerProduto containerProdutoFim">
                             <label className="labelIdadeProduto labelInformacaoProduto corPadrao1" >Idade:</label>
-                            <input type="number" className="inputIdadeProduto corPadrao1 inputPadrao inputGeralProduto" onChange={e => setIdade(e.target.value)} min="1" max="100"></input>
+                            <input type="number" className="inputIdadeProduto corPadrao1 inputPadrao inputGeralProduto" onChange={e => setIdade(e.target.value)} min="1" max="100" value={idade}></input>
                         </div>
                         {/* Cadastro Da Idade */}
                     </div>
                     <div className="containerSecundarioProduto">
                         <div className="containerProduto">
                             <label className="labelInformacaoProduto corPadrao1" >Tamanho:</label>
-                            <select type="text" className="selectTamanhoProduto corPadrao1 widthInputMax selectPadrao selectGeralProduto" onChange={e => setTamanho(e.target.value)}>
+                            <select type="text" className="selectTamanhoProduto corPadrao1 widthInputMax selectPadrao selectGeralProduto" onChange={e => setTamanho(e.target.value)} value={tamanho}>
                                 <option></option>
                                 <option>Mini</option>
                                 <option>Pequeno</option>
@@ -117,15 +117,16 @@ export default function Produtos() {
                         {/* Cadastro Do Tamanho */}
                         <div className="containerProduto containerProdutoFim">
                             <label className="labelRaçaProduto labelInformacaoProduto corPadrao1 widthLabelPrimario" >Raça e Espécie:</label>
-                            <input type="text" className="inputRacaProduto corPadrao1 widthInputMax inputPadrao inputGeralProduto" onChange={e => setRacaEspecie(e.target.value)} placeholder="Raça / Espécie"></input>
+                            <input type="text" className="inputRacaProduto corPadrao1 widthInputMax inputPadrao inputGeralProduto" onChange={e => setRacaEspecie(e.target.value)} placeholder="Raça / Espécie" value={racaEspecie}></input>
                         </div>
                         {/* Cadastro Do Raça Espécie */}
                     </div>
                     <div className="containerSecundarioProduto">
                         <div className="containerProduto">
                             <label className="labelInformacaoProduto corPadrao1" >Extras:</label>
-                            <select type="text" className="selectExtrasProduto corPadrao1 widthInputMax selectPadrao selectGeralProduto" onChange={e => setExtra(e.target.value)}>
+                            <select type="text" className="selectExtrasProduto corPadrao1 widthInputMax selectPadrao selectGeralProduto" onChange={e => setExtra(e.target.value)} value={racaEspecie}>
                                 <option></option>
+                                <option>Sem Extras</option>
                                 <option>Brinquedos De Morder</option>
                                 <option>Lacinhos</option>
                                 <option>Ossinhos Comestíveis</option>
@@ -135,7 +136,7 @@ export default function Produtos() {
                         {/* Cadastro Do Extras */}
                         <div className="containerProduto containerProdutoFim">
                             <label className="labelQuantidadeProduto labelInformacaoProduto corPadrao1 widthLabelPrimario" >Quantidade(Kg):</label>
-                            <input type="number" className="inputQuantidadeProduto corPadrao1 widthInputMax inputPadrao inputGeralProduto" onChange={e => setQuantidade(e.target.value)} min="1" max="20"></input>
+                            <input type="number" className="inputQuantidadeProduto corPadrao1 widthInputMax inputPadrao inputGeralProduto" onChange={e => setQuantidade(e.target.value)} min="1" max="20" value={quantidade}></input>
                         </div>
                         {/* Cadastro Do Quantidade */}
                     </div>
@@ -155,7 +156,7 @@ export default function Produtos() {
                     </div>
                     {/* Container para Botao Salvar Venda */}
                     <div className="containerBotaoProduto">
-                        <button className="padraoBotaoProduto containerPadrao backgroundCor4 corPadrao1" onClick={e => { limparCampos() }}>Limpar Campos</button>
+                        <button className="padraoBotaoProduto containerPadrao backgroundCor4 corPadrao1" onClick={limparCampos}>Limpar Campos</button>
                     </div>
                     {/* Container para Botao Limpar Venda */}
                 </div>
