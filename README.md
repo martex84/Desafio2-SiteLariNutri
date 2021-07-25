@@ -1,4 +1,4 @@
-# Descrição Para utilização do Site Lana Nutri - Desafio Gama Academy
+# Descrição Para utilização do Site Lara Nutri - Desafio Gama Academy
  
 ## Descrição Site
  O site irá realizar a interação entre um cliente desejando comprar rações artesanais para seu pet e o zootecnista responsável por produzir, pegando informações relacionadas ao cliente, necessário para realizar a entrega e do pet, para poder planejar a criação da ração, armazenando todos esses dados dentro do site por meio do local storage.
@@ -51,3 +51,12 @@
 ## Outras Observações
    O sistema é responsivo, podendo ser utilizado pelo celular, mas não pode pode apresentar os valores do local storage por problemas do sistema, como o android. Além do fato do sistema apresentar um erro quando é carregado inicialmente de uma das páginas "Cadastro" ou "Produtos", devendo voltar para página "Home" para prosseguir.
   
+## Site Do Projeto
+   Link Site : [LaraNutri](https://laranutrivendas.netlify.app/)   
+
+## Imagens Site
+   **Versão Desktop**
+   <img src="template/versaoDesktop.jpg" width="100%" />
+   
+   **Versão Mobile**</br>
+   <img src="template/versaoMobile.jpg" width="50%"> 
