@@ -75,9 +75,14 @@
     width: 80px;
 }
 
-.botaoCarrinho{
+.containerBarraResponsiva{
+    display: none;
     width: 80px;    
     font-size: 25px;   
+}
+
+.buttonFecharNR{    
+    color: #C21135;
 }
 
 .padraoBotao{   
@@ -90,5 +95,26 @@
 
 .marginPadraoBotao{
     margin-right: 20px;
+}
+
+@media screen and (max-width:880px){
+    .nomeLogo{
+        display: none;
+    }
+    
+    .botaoProduto{
+        display: none;   
+    }
+    
+    .botaoCadastro{
+        display: none;      
+    }
+    
+    .botaoLogOff{
+        display: none;  
+    }
+    .containerBarraResponsiva{
+        display: block;
+    }
 }
 

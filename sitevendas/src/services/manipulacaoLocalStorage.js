@@ -13,7 +13,7 @@ export default class manipulacaoLocalStorage {
                     nomeKey = `${tipoArray}-${arrayLocal.id}`;
                     mensagem = "Pedido Realizado Com Sucesso!"
                     break;
-                    
+
                 case "Produto":
                     nomeKey = `${tipoArray}-${arrayLocal.idPet}`;
                     mensagem = "Ração Escolhida com Sucesso"
@@ -43,19 +43,26 @@ export default class manipulacaoLocalStorage {
     }
 
     atualizarStorageInterno(nome, id) {
-        const arrayLocal = {...this.array[0]};
+        const arrayLocal = { ...this.array[0] };
         const nomeVariavel = `${nome}-${id}`;
         let arrayAntiga = JSON.parse(getStorageLocal(nomeVariavel));
-        if(verificarArray(arrayLocal,null) === true){
+        if (verificarArray(arrayLocal, null) === true) {
 
             let arrayNova = [];
             arrayAntiga.map(itemArray => arrayNova.push(itemArray))
             arrayNova.push(arrayLocal);
-            localStorage.removeItem(nomeVariavel);            
+            localStorage.removeItem(nomeVariavel);
             localStorage.setItem(nomeVariavel, JSON.stringify(arrayNova));
-            
-            if(nome === "Produto") alert("Acrescentada Mais Uma Ração!")
-        } 
+
+            if (nome === "Produto") alert("Acrescentada Mais Uma Ração!")
+        }
+    }
+
+    apagarLocalStorage(){
+        if (localStorage.length > 0) {
+            localStorage.clear();
+            alert("Até Logo!")
+        }
     }
 }
 

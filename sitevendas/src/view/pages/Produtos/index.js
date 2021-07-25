@@ -82,7 +82,7 @@ export default function Produtos() {
             <NavBar></NavBar>
             {/* NavBar Principal */}
             <section id="secaoPrincipal">
-                <h1 className="corVermelha">Formulação</h1>
+                <h1 className="tituloPadrao corPadrao1 contornoVermelho">Formulação</h1>
                 <div className="containerTextoProdutos containerTextoInformacao">
                     <p>
                         Para realizar a formulação é necessário informar os dados do seu pet, assim iremos escolher os melhores ingredientes com base no que foi informado, caso tenha mais de um pet, envie o pedido para o carrinho e repita o processo.
@@ -93,19 +93,19 @@ export default function Produtos() {
                     <div className="containerSecundarioProduto containerPadraoTopo">
                         <div className="containerProduto">
                             <label className="labelInformacaoProduto corPadrao1" >Nome:</label>
-                            <input type="text" className="inputNomeProduto corPadrao1 widthInputMax inputPadrao" onChange={e => setNome(e.target.value)}></input>
+                            <input type="text" className="inputNomeProduto corPadrao1 widthInputMax inputPadrao inputGeralProduto" onChange={e => setNome(e.target.value)}></input>
                         </div>
                         {/* Cadastro Do Nome */}
                         <div className="containerProduto containerProdutoFim">
                             <label className="labelIdadeProduto labelInformacaoProduto corPadrao1" >Idade:</label>
-                            <input type="number" className="inputIdadeProduto corPadrao1 inputPadrao" onChange={e => setIdade(e.target.value)} min="1" max="100"></input>
+                            <input type="number" className="inputIdadeProduto corPadrao1 inputPadrao inputGeralProduto" onChange={e => setIdade(e.target.value)} min="1" max="100"></input>
                         </div>
                         {/* Cadastro Da Idade */}
                     </div>
                     <div className="containerSecundarioProduto">
                         <div className="containerProduto">
                             <label className="labelInformacaoProduto corPadrao1" >Tamanho:</label>
-                            <select type="text" className="selectTamanhoProduto corPadrao1 widthInputMax selectPadrao" onChange={e => setTamanho(e.target.value)}>
+                            <select type="text" className="selectTamanhoProduto corPadrao1 widthInputMax selectPadrao selectGeralProduto" onChange={e => setTamanho(e.target.value)}>
                                 <option></option>
                                 <option>Mini</option>
                                 <option>Pequeno</option>
@@ -117,14 +117,14 @@ export default function Produtos() {
                         {/* Cadastro Do Tamanho */}
                         <div className="containerProduto containerProdutoFim">
                             <label className="labelRaçaProduto labelInformacaoProduto corPadrao1 widthLabelPrimario" >Raça e Espécie:</label>
-                            <input type="text" className="inputRacaProduto corPadrao1 widthInputMax inputPadrao" onChange={e => setRacaEspecie(e.target.value)} placeholder="Raça / Espécie"></input>
+                            <input type="text" className="inputRacaProduto corPadrao1 widthInputMax inputPadrao inputGeralProduto" onChange={e => setRacaEspecie(e.target.value)} placeholder="Raça / Espécie"></input>
                         </div>
                         {/* Cadastro Do Raça Espécie */}
                     </div>
                     <div className="containerSecundarioProduto">
                         <div className="containerProduto">
                             <label className="labelInformacaoProduto corPadrao1" >Extras:</label>
-                            <select type="text" className="selectExtrasProduto corPadrao1 widthInputMax selectPadrao" onChange={e => setExtra(e.target.value)}>
+                            <select type="text" className="selectExtrasProduto corPadrao1 widthInputMax selectPadrao selectGeralProduto" onChange={e => setExtra(e.target.value)}>
                                 <option></option>
                                 <option>Brinquedos De Morder</option>
                                 <option>Lacinhos</option>
@@ -135,7 +135,7 @@ export default function Produtos() {
                         {/* Cadastro Do Extras */}
                         <div className="containerProduto containerProdutoFim">
                             <label className="labelQuantidadeProduto labelInformacaoProduto corPadrao1 widthLabelPrimario" >Quantidade(Kg):</label>
-                            <input type="number" className="inputQuantidadeProduto corPadrao1 widthInputMax inputPadrao" onChange={e => setQuantidade(e.target.value)} min="1" max="20"></input>
+                            <input type="number" className="inputQuantidadeProduto corPadrao1 widthInputMax inputPadrao inputGeralProduto" onChange={e => setQuantidade(e.target.value)} min="1" max="20"></input>
                         </div>
                         {/* Cadastro Do Quantidade */}
                     </div>

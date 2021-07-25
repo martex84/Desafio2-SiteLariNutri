@@ -2,8 +2,11 @@ import '../../css/NavBarPrincipal.css';
 import '../../css/Global.css';
 import '../../css/fontAwesome/css/all.css'
 
-import { React} from 'react';
+import { React, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+import NavBarResponsiva from './NavBarResponsiva';
+import manipulacaoLocalStorage from '../../services/manipulacaoLocalStorage';
 
 import setaDireita from '../../assets/seta.png'
 import setaEsquerda from '../../assets/seta2.png'
@@ -11,12 +14,34 @@ import logo from '../../assets/logo.png'
 
 function NavBar() {
 
-    function apagarLocalStorage(){
-        if(localStorage.length > 0){
-            localStorage.clear();
-            alert("Até Logo!")
-        }
+    const [estilo,setEstilo] = useState("");
+    const [estiloOpen, setEstiloOpen] = useState("");
+    const [estiloClose, setEstiloClose] = useState("");
+    const [variacaoNBR,setVariacaoNBR] = useState(false);
+
+    function apagarLocalStorage() {
+        const manipularLocalStorage = new manipulacaoLocalStorage(null);
+        manipularLocalStorage.apagarLocalStorage();
     }
+
+    function mudarEstilo(){        
+        if(variacaoNBR === true) setVariacaoNBR(false);
+        else setVariacaoNBR(true);        
+    }
+
+    useEffect(()=> {
+
+        if(variacaoNBR === true){
+            setEstilo("flex");
+            setEstiloOpen(0);
+            setEstiloClose("1.5em");
+        }
+        else{
+            setEstilo("none");
+            setEstiloOpen("1.5em");
+            setEstiloClose("0");
+        }        
+    },[variacaoNBR])
 
     return (
         <>
@@ -64,12 +89,12 @@ function NavBar() {
                             </Link>
                         </div>
                         {/* Container Botão Cadastro */}
-                        <div className="botaoCarrinho">
-                            <Link className="containerPadrao" to="/">
-                                <button className="containerPadrao padraoBotao corVermelha backgroundCor1 botaoLateral">
-                                    <i className="fas fa-shopping-basket" alt="Carrinho De Compra"></i>
-                                </button>
-                            </Link>
+                        <div className="containerBarraResponsiva marginPadraoBotao">
+                            <button className="buttonFecharNR containerPadrao padraoBotao corPadraoBotao backgroundCor1" onClick={mudarEstilo}>
+                                <i className="fas fa-bars buttonOpen" style={{fontSize:estiloOpen}}></i>
+                                <i className="fas fa-times buttonClose" style={{fontSize:estiloClose}}></i>
+                            </button>
+                            <NavBarResponsiva estilo={estilo}></NavBarResponsiva>
                         </div>
                         {/* Container Botão Carrinho de Compra */}
                     </div>

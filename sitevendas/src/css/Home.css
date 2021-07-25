@@ -1,14 +1,8 @@
 #secaoPrincipal {
-    padding: 50px;   
+    padding: 50px;
 }
 
-#secaoPrincipal > h1{
-    font-size: 2.2em;
-    text-align: center;
-    font-weight: 900;
-}
-
-.containerConteudoHome{
+.containerConteudoHome {
     margin-top: 50px;
     display: flex;
     align-items: center;
@@ -35,20 +29,98 @@
 .ContainerTextoNutricao>p {
     margin-top: 15px;
     font-size: 1.5em;
+    text-align: justify;
 }
 
-.cotainerImagemTextoNutricao{
+.cotainerImagemTextoNutricao {
     width: 310px;
     height: 220px;
     margin: 50px auto 0px auto;
 }
 
-.cotainerImagemTextoNutricao > p{
+.cotainerImagemTextoNutricao>p {
     font-size: 1.1em;
     text-align: center;
 }
 
-.containerImagemPropaganda{    
+.containerImagemPropaganda {
     width: 300px;
     height: 210px;
+}
+
+@media screen and (max-width:1000px) {
+    #secaoPrincipal {
+        padding: 10px;
+    }
+
+    .containerConteudoHome {
+        align-items: flex-start;
+    }
+
+    .containerImagemNutricao {
+        width: 390px;
+        height: 380px;
+        margin-left: 10px;
+    }
+
+    .ContainerTextoNutricao {
+        width: 90%;
+        margin-left: 20px;
+    }
+
+    .ContainerTextoNutricao>p {
+        padding: 10px;
+    }
+
+    .cotainerImagemTextoNutricao {
+        margin-top: 10px;
+        height: 280px;
+    }
+
+    .containerImagemPropaganda {
+        margin-bottom: 20px;
+    }
+
+}
+
+@media screen and (max-width:800px) {
+    #secaoPrincipal>h1 {
+        min-width: 320px;
+        margin: auto;
+    }
+
+    .containerConteudoHome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }   
+
+    .ContainerTextoNutricao {
+        width: 90%;
+    }
+
+    .cotainerImagemTextoNutricao {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    #secaoPrincipal>h1 {
+        width: 320px;
+        margin: auto;
+    }
+
+    .containerImagemNutricao {
+        width: 300px;
+        height: 290px;
+    }
+
+    .ContainerTextoNutricao {
+        width: 300px;
+    }
+
+    .ContainerTextoNutricao>p {
+        font-size: 1.3em;
+    }
 }

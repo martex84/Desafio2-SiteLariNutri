@@ -1,28 +1,35 @@
-#secaoPrincipal{
+#secaoPrincipal {
     width: 100%;
-    margin: 50px auto 20px auto; 
+    margin: 50px auto 20px auto;
     max-width: 1200px;
-    background-color: rgba(82,121,111,0.3);
+    background-color: rgba(82, 121, 111, 0.3);
 }
 
-.containerTextoInformacao > p{    
+.containerTextoInformacao>p {
     text-align: justify;
     font-size: 1.6em;
 }
 
-.containerPadrao{
+.containerPadrao {
     width: 100%;
     height: 100%;
 }
 
-.imagemPadrao{
+.tituloPadrao {
+    padding: 20px;
+    font-size: 2.2em;
+    text-align: center;
+    font-weight: 900;
+}
+
+.imagemPadrao {
     width: 100%;
     height: 100%;
     text-align: center;
 }
 
 .inputPadrao,
-.selectPadrao{
+.selectPadrao {
     height: 40px;
     padding: 5px;
     margin-left: 10px;
@@ -32,47 +39,52 @@
 }
 
 .inputPadrao:hover,
-.selectPadrao:hover{
+.selectPadrao:hover {
     color: #DC143C;
     background-color: rgba(211, 211, 211, 0.9);
 }
 
-.corPadrao1{
+.corPadrao1 {
     color: #CAD2C5;
 }
 
-.corPadrao2{
+.corPadrao2 {
     color: #84A98C;
 }
 
-.corPadrao3{
+.corPadrao3 {
     color: #52796F;
 }
 
-.corPadrao5{
+.corPadrao5 {
     color: #2F3E46;
 }
 
-.corVermelha{
+.corVermelha {
     color: #DC143C;
 }
 
-.corPreta{
+.corPreta {
     color: #222D33;
 }
 
-.backgroundCor1{
+.backgroundCor1 {
     background-color: #CAD2C5;
 }
 
-.backgroundCor2{
+.backgroundCor2 {
     background-color: #84A98C;
 }
 
-.backgroundCor4{
-    background-color:  #354F52;
+.backgroundCor4 {
+    background-color: #354F52;
 }
 
-.linkLimpo{    
+.contornoVermelho {
+    border: 5px dotted rgba(194, 17, 53, 0.3);
+    background-color: rgba(194, 17, 53, 0.2);
+}
+
+.linkLimpo {
     text-decoration: none;
 }

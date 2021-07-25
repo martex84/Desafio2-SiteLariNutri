@@ -95,7 +95,7 @@
 
 }
 
-.containerBotoesProduto{
+.containerBotoesProduto {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -110,6 +110,58 @@
     font-size: 1.3em;
 }
 
-.corBordaBotaoEnviar{
+.corBordaBotaoEnviar {
     border-color: #DC143C;
+}
+
+@media screen and (max-width:950px) {
+    .containerTextoInformacao {
+        margin: 20px 40px 0 40px;
+    }
+
+    .containerTextoInformacao>p {
+        font-size: 1.3em;
+    }
+
+    .containerConteudoProduto {
+        width: 700px;
+    }
+
+    .inputNomeProduto {
+        width: 410px;
+    }
+
+    .inputRacaProduto {
+        width: 220px;
+    }
+
+    .selectExtrasProduto {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width:750px) {
+    .containerConteudoProduto{
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .containerSecundarioProduto {
+        flex-direction: column;
+    }
+
+    .containerProdutoFim{
+        justify-content: flex-start;
+    }
+
+    .inputGeralProduto,
+    .selectGeralProduto{
+        width: 90%;
+        margin-right: 0;
+    }
+
+    .labelInformacaoProduto{
+        width: 280px;
+        font-size: 1.6em;
+    }
 }

@@ -15,7 +15,7 @@ function Html() {
             <NavBar></NavBar>
             {/* Barra de Navegação Principal */}
             <section id="secaoPrincipal">
-                <h1 className="corPadrao1 corVermelha">
+                <h1 className="tituloPadrao corPadrao1 contornoVermelho">
                     Na LaraNutri a alimentação do seu pet é prioridade.
                 </h1>
                 <div className="containerConteudoHome">

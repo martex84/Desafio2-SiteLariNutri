@@ -24,26 +24,24 @@ function Cadastro() {
 
     function salvarStorageInterno(e) {
 
-        if (localStorage.getItem("id") === null) {
+        const veirificaStorage = new manipulacaoLocalStorage(null);
+        if(veirificaStorage.verificaStorageLocalVazia("Cliente")===true){
             const id = numerosAleatorios(1000, 0);
-
-            const arrayStorage = [{
-                id: id,
-                nome: nome,
-                email: email,
-                cidade: cidade,
-                endereco: endereco,
-                estado: estado,
-                cpf: cpf,
-                telefone: telefone,
-            }]
-            const valorLocalStorage = new manipulacaoLocalStorage(arrayStorage);
-            valorLocalStorage.salvarStorageInterno("Cliente", e);
+    
+                const arrayStorage = [{
+                    id: id,
+                    nome: nome,
+                    email: email,
+                    cidade: cidade,
+                    endereco: endereco,
+                    estado: estado,
+                    cpf: cpf,
+                    telefone: telefone,
+                }]
+                const valorLocalStorage = new manipulacaoLocalStorage(arrayStorage);
+                valorLocalStorage.salvarStorageInterno("Cliente", e);    
         }
-
-        else {
-            return alert("Você já está cadastrado, saia do seu perfil");
-        }
+        else return alert("Você já está cadastrado, saia do seu perfil");
 
     }
 
@@ -52,7 +50,7 @@ function Cadastro() {
             <NavBar></NavBar>
             {/* NavBar Principal */}
             <section id="secaoPrincipal">
-                <h1 className="corVermelha">Cadastro de Usuário</h1>
+                <h1 className="tituloPadrao corPadrao1 contornoVermelho">Cadastro de Usuário</h1>
                 <div className="containnerTextoCadastro containerTextoInformacao corPadrao1">
                     <p>
                         Para que o produto possa ser enviado é necessário realizar o cadastro, informando todas os dados a seguir, assim iremos enviar os produtos o mais breve possível ao confirmar sua compra.
