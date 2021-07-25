@@ -77,8 +77,7 @@ function verificarArray(array, evento) {
         if (key !== "id") { //Ignora a id porque ela sempre vai ser randomica, então sempre vai ter
             if (verificaItem === false) {
                 if (item === "") {
-                    alert("Contem Valores Sem Preencher!")
-                    localStorage.clear();
+                    alert("Contem Valores Sem Preencher!")                    
                     verificaItem = true;
                     if (evento !== null) { evento.preventDefault(); }
                 }

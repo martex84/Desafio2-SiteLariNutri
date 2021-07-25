@@ -52,8 +52,7 @@ export default function Produtos() {
         else alert("Favor realizar cadastro de cliente antes de efetuar a compra.");
     }
 
-    function limparCampos() {
-        setId("");
+    function limparCampos() {        
         setNome("");
         setIdade("");
         setTamanho("");
@@ -124,7 +123,7 @@ export default function Produtos() {
                     <div className="containerSecundarioProduto">
                         <div className="containerProduto">
                             <label className="labelInformacaoProduto corPadrao1" >Extras:</label>
-                            <select type="text" className="selectExtrasProduto corPadrao1 widthInputMax selectPadrao selectGeralProduto" onChange={e => setExtra(e.target.value)} value={racaEspecie}>
+                            <select type="text" className="selectExtrasProduto corPadrao1 widthInputMax selectPadrao selectGeralProduto" onChange={e => setExtra(e.target.value)} value={extra}>
                                 <option></option>
                                 <option>Sem Extras</option>
                                 <option>Brinquedos De Morder</option>
